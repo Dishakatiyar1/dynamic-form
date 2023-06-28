@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import './Form.css';
 
 const firebaseConfig = {
     // Your Firebase configuration object goes here
@@ -38,8 +39,9 @@ const Form = () => {
     setImage(e.target.files[0]);
   };
 
-  
+
     // Save form data to Google Firestore
+    // Code to save the data goes here
     const handleSave = async () => {
         const formData = {
           text1,
@@ -56,69 +58,62 @@ const Form = () => {
       };
       
   
-
   return (
-    <div className="flex">
-      <div className="w-1/2">
-        <h2 className="text-2xl font-bold mb-4">Form</h2>
-        <div className="mb-4">
-          <label className="block mb-2" htmlFor="text1">
+    <>
+    <div className='main-div'>
+      <div className="form-div">
+        <h2>Form</h2>
+        <div className="text-field1">
+          <label htmlFor="text1">
             Text Field 1
           </label>
           <input
-            className="w-full border border-gray-300 rounded px-3 py-2"
             type="text"
             id="text1"
             value={text1}
             onChange={handleText1Change}
           />
         </div>
-        <div className="mb-4">
-          <label className="block mb-2" htmlFor="text2">
+        <div className="text-field2">
+          <label htmlFor="text2">
             Text Field 2
           </label>
           <input
-            className="w-full border border-gray-300 rounded px-3 py-2"
             type="text"
             id="text2"
             value={text2}
             onChange={handleText2Change}
           />
         </div>
-        <div className="mb-4">
-          <label className="block mb-2" htmlFor="image">
+        <div className="image-field">
+          <label htmlFor="image">
             Image Field
           </label>
           <input
-            className="w-full border border-gray-300 rounded px-3 py-2"
             type="file"
             id="image"
             accept="image/*"
             onChange={handleImageChange}
           />
         </div>
-        <button
-          className="bg-blue-500 hover:bg-blue-600 text-white rounded px-4 py-2"
-          onClick={handleSave}
-        >
-          Save
-        </button>
+        <button type="submit" onClick={handleSave}> Save </button>
       </div>
-      <div className="w-1/2 ml-4">
-        <h2 className="text-2xl font-bold mb-4">Preview</h2>
+      <div className="preview-div">
+        <h2>Preview</h2>
         <div>
-          <p className="mb-2">Text Field 1: {text1}</p>
-          <p className="mb-2">Text Field 2: {text2}</p>
+          <p className="output1">Text Field 1: {text1}</p>
+          <p className="output2">Text Field 2: {text2}</p>
           {image && (
             <img
               src={URL.createObjectURL(image)}
               alt="Preview"
-              className="max-w-full h-auto mb-4"
+              className="preview-image"
             />
           )}
         </div>
       </div>
     </div>
+    </>
   );
 };
 

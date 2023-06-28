@@ -1,0 +1,98 @@
+.main-div{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    background-color:rgb(167, 78, 167);
+    padding: 70px 0px;
+}
+
+.form-div{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 10px;
+}
+.form-div h2{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 600; 
+    padding-bottom: 20px;
+}
+
+.text-field1{
+    margin-left: 35px;
+    padding-bottom: 10px;
+}
+.text-field1 label{
+    padding-right: 5px;
+}
+.text-field1 input{
+    background-color: gainsboro;
+    outline: none;
+    outline-style:ridge;
+}
+
+
+.text-field2{
+    margin-left: 35px;
+    padding-bottom: 10px;
+}
+.text-field2 label{
+    padding-right: 5px;
+}
+.text-field2 input{
+    background-color: gainsboro;
+    outline: none;
+    outline-style:ridge;
+}
+
+.image-field{
+    margin-left: 35px;
+    padding-bottom: 40px;
+}
+.image-field label{
+    padding-right: 5px;
+}
+
+button{
+    width:100px;
+    margin-left: 150px;
+    Color: black;
+    outline-style:solid;
+}
+button :hover{
+    color: gray;
+}
+
+
+
+
+.preview-div{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 10px;
+    padding-right: 50px;
+}
+.preview-div h2{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 600; 
+    padding-bottom: 20px;
+}
+
+.output1{
+    padding-bottom: 10px;
+}
+.output2{
+    padding-bottom: 20px;
+}
+.preview-div img{
+    height: 150px;
+    width: 150px;
+}
